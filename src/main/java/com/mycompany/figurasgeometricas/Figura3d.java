@@ -6,14 +6,23 @@
 package com.mycompany.figurasgeometricas;
 
 /**
+ * Clase padre que contiene el método en común de las figuras 3d hallar volumen
  *
- * @author luis fernando
+ * @author luis fernando, Angie Manrique
  */
-public abstract class Figura3d extends Figura {
+public abstract class Figura3d implements Operaciones {
 
-    public Figura3d(int x, int y) {
-        super(x, y);
+    /**
+     * Constructor de la clase
+     */
+    public Figura3d() {
     }
+
+    /**
+     * Método que halla el volumen
+     *
+     * @return y retorna el valor obtenido
+     */
     public abstract String hallarVolumen();
-    
+
 }

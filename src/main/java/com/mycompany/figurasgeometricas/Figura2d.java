@@ -6,14 +6,24 @@
 package com.mycompany.figurasgeometricas;
 
 /**
+ * Clase padre que contiene el método en común de las figuras 2d hallar
+ * perimetro
  *
- * @author luis fernando
+ * @author luis fernando, Angie Manrique
  */
-public abstract class Figura2d extends Figura {
+public abstract class Figura2d implements Operaciones {
 
-    public Figura2d(int x, int y) {
-        super(x, y);
+    /**
+     * Constructor de la clase
+     */
+    public Figura2d() {
     }
+
+    /**
+     * Método que halla el perimetro
+     *
+     * @return y retorna el valor obtenido
+     */
     public abstract String hallarPerimetro();
-   
+
 }

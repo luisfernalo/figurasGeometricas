@@ -7,13 +7,22 @@ package com.mycompany.figurasgeometricas;
 
 /**
  *
- * @author luis fernando
+ * @author luis fernando, angie manrique
  */
 public class Esfera extends Figura3d {
+
+    /**
+     * variable que guarda el valor ingresado por el usuario como radio de la
+     * esfera
+     */
     private double radio;
 
-    public Esfera(double radio, int x, int y) {
-        super(x, y);
+    /**
+     * Constructor de la clase
+     *
+     * @param radio
+     */
+    public Esfera(double radio) {
         this.radio = radio;
     }
 
@@ -25,13 +34,32 @@ public class Esfera extends Figura3d {
         this.radio = radio;
     }
 
+    /**
+     * Método encargado de calcular el volumen de la esfera
+     *
+     * @return volumen hallado
+     */
     @Override
     public String hallarVolumen() {
-        return "El Volumen de la Esfera es "+4*Math.PI*radio*radio;
+        return "El Volumen de la Esfera es " + (1.333 * Math.PI * (Math.pow(radio, 3)));
     }
+
+    /**
+     * Método encargado de calcular el área de la esfera
+     *
+     * @return área hallada
+     */
     @Override
-    public String hallarArea(){
-        return "El Area de la Esfera es "+4*Math.PI*radio*radio+" --- "+"El Volumen de la Esfera es "+(4/3)*Math.PI*(radio*radio*radio);
+    public String hallarArea() {
+        return "El área de la Esfera es " + 4 * Math.PI * radio * radio;
     }
-    
+
+    /**
+     * Método que imprime el área y volumen de la esfera
+     */
+    @Override
+    public void imprimir() {
+        System.out.println(hallarArea());
+        System.out.println(hallarVolumen());
+    }
 }

@@ -7,8 +7,9 @@ package com.mycompany.figurasgeometricas;
 
 /**
  *
- * @author luis fernando
+ * @author luis fernando, angie manrique
  */
 public interface Operaciones {
      public String hallarArea();
+     public void imprimir();
 }

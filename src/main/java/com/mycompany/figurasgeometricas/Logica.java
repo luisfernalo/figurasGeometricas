@@ -5,36 +5,39 @@
  */
 package com.mycompany.figurasgeometricas;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 /**
  *
- * @author luis fernando
+ * @author luis fernando, angie manrique
  */
 public class Logica {
-    Figura figurasGeometricas[] = new Figura[10];
-    int contador=0;
-    int continuar=0;
+
+    ArrayList<Operaciones> figurasGeometricas = new ArrayList<Operaciones>();
+
     public void Principal() {
-        
         Menu();
-        
     }
-    public void Menu(){
-        do{
-            System.out.println("Que Figura quiere");
-            System.out.println("Que Figura quiere");
-            System.out.println("1- rectangulo");
+
+    public void Menu() {
+
+        int continuar = 0;
+        do {
+            System.out.println("--Figuras geométricas--");
+            System.out.println("1- triangulo");
             System.out.println("2- cuadrado");
             System.out.println("3- circulo");
             System.out.println("4- cubo");
             System.out.println("5- cilindro");
             System.out.println("6- esfera");
-            Scanner seleccione=new Scanner(System.in);
-            int seleccion =seleccione.nextInt();
-            switch(seleccion){
+            System.out.println("Elija una figura: ");
+            Scanner seleccione = new Scanner(System.in);
+            int seleccion = seleccione.nextInt();
+            switch (seleccion) {
                 case 1:
-                    Rectangulo();
+                    Triangulo();
                     break;
                 case 2:
                     Cuadrado();
@@ -50,86 +53,91 @@ public class Logica {
                     break;
                 case 6:
                     Esfera();
-                    break;    
+                    break;
             }
             System.out.println("Desea continuar 1=si 0=no");
-            Scanner decision=new Scanner(System.in);
-             continuar=Integer.parseInt(decision.nextLine());
-        }while(continuar==1);
-       
+            Scanner decision = new Scanner(System.in);
+            continuar = Integer.parseInt(decision.nextLine());
+        } while (continuar == 1);
         Imprimir();
     }
-    public void Rectangulo(){
-        Scanner valores=new Scanner(System.in);
-        System.out.println("digite base");
-        int base = valores.nextInt();
-        System.out.println("digite altura");
-        int altura = valores.nextInt();
-        figurasGeometricas[contador]= new Rectangulo(base,altura,0,0);
-        contador++;
+
+    public void Triangulo() {
+        System.out.println("--Triángulo--");
+        Scanner valores = new Scanner(System.in);
+        System.out.println("digite lado 1");
+        int lado1 = valores.nextInt();
+        System.out.println("digite lado 2");
+        int lado2 = valores.nextInt();
+        System.out.println("digite lado 3");
+        int lado3 = valores.nextInt();
+        Triangulo t1 = new Triangulo(lado1, lado2, lado3);
+        figurasGeometricas.add(t1);
     }
-    public void Cuadrado(){
-        Scanner ladovalor=new Scanner(System.in);
-        System.out.println("digite lado");
+
+    public void Cuadrado() {
+        System.out.println("--Cuadrado--");
+        Scanner ladovalor = new Scanner(System.in);
+        System.out.println("Digite lado");
         int lado = ladovalor.nextInt();
-        figurasGeometricas[contador]= new Cuadrado(lado,0,0);
-        contador++;
+        Cuadrado c1 = new Cuadrado(lado);
+        figurasGeometricas.add(c1);
     }
-    public void Circulo(){
-        Scanner valorescirculo=new Scanner(System.in);
+
+    public void Circulo() {
+        System.out.println("--Circulo--");
+        Scanner valorescirculo = new Scanner(System.in);
         System.out.println("digite radio");
         int radio = valorescirculo.nextInt();
-        figurasGeometricas[contador]= new Circulo(radio,0,0);
-        contador++; 
+        Circulo c1 = new Circulo(radio);
+        figurasGeometricas.add(c1);
     }
+
     private void Cubo() {
-        Scanner valorescubo=new Scanner(System.in);
+        System.out.println("--Cubo--");
+        Scanner valorescubo = new Scanner(System.in);
         System.out.println("digite lado");
         int lado = valorescubo.nextInt();
-        figurasGeometricas[contador]= new Cubo(lado,0,0);
-        contador++; 
+        Cubo c1 = new Cubo(lado);
+        figurasGeometricas.add(c1);
     }
+
     private void Cilindro() {
-        Scanner valorescilindro=new Scanner(System.in);
+        System.out.println("--Cilindro--");
+        Scanner valorescilindro = new Scanner(System.in);
         System.out.println("digite altura");
         int altura = valorescilindro.nextInt();
         System.out.println("digite radio");
         int radio = valorescilindro.nextInt();
-        figurasGeometricas[contador]= new Cilindro(altura,radio,0,0);
-        contador++; 
+        Cilindro c1 = new Cilindro(altura, radio);
+        figurasGeometricas.add(c1);
     }
+
     private void Esfera() {
-        Scanner valoresesfera=new Scanner(System.in);
+        System.out.println("--Esfera--");
+        Scanner valoresesfera = new Scanner(System.in);
         System.out.println("digite radio");
         int radio = valoresesfera.nextInt();
-        figurasGeometricas[contador]= new Esfera(radio,0,0);
-        contador++; 
+        Esfera e1 = new Esfera(radio);
+        figurasGeometricas.add(e1);
     }
+
     private void Imprimir() {
-        for(int i=0;i<contador;i++){
-            Figura figura = figurasGeometricas[i];
-            System.out.println(figura.hallarArea());
-        }    
-        /*for(contador figura: figurasGeometricas ){
-            if(figura instanceof Rectangulo){
-                ((Rectangulo) figura).hallarArea();
-                ((Rectangulo) figura).hallarPerimetro();
-            }else if(figura instanceof Cuadrado){
-                ((Cuadrado) figura).hallarArea();
-                ((Cuadrado) figura).hallarPerimetro();
-            }else if(figura instanceof Circulo){
-                ((Circulo) figura).hallarArea();
-                ((Circulo) figura).hallarPerimetro();
-            }else if(figura instanceof Cubo){
-                ((Cubo) figura).hallarArea();
-                ((Cubo) figura).hallarVolumen();
-            }else if(figura instanceof Cilindro){
-                ((Cilindro) figura).hallarArea();
-                ((Cilindro) figura).hallarVolumen();
-            }else if(figura instanceof Esfera){
-                ((Esfera) figura).hallarArea();
-                ((Esfera) figura).hallarVolumen();
+
+        for (Operaciones figura : figurasGeometricas) {
+            if (figura instanceof Triangulo) {
+                ((Triangulo) figura).imprimir();
+            } else if (figura instanceof Cuadrado) {
+                ((Cuadrado) figura).imprimir();
+            } else if (figura instanceof Circulo) {
+                ((Circulo) figura).imprimir();
+            } else if (figura instanceof Cubo) {
+                ((Cubo) figura).imprimir();
+            } else if (figura instanceof Cilindro) {
+                ((Cilindro) figura).imprimir();
+            } else if (figura instanceof Esfera) {
+                ((Esfera) figura).imprimir();
             }
-           */
+        }
     }
 }
