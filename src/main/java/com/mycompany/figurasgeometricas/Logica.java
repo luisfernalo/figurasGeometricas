@@ -17,18 +17,19 @@ public class Logica {
     int continuar=0;
     public void Principal() {
         
-        System.out.println("Que Figura quiere");
-        System.out.println("1- rectangulo");
-        System.out.println("2- cuadrado");
-        System.out.println("3- circulo");
-        System.out.println("4- cubo");
-        System.out.println("5- cilindro");
-        System.out.println("6- esfera");
         Menu();
         
     }
     public void Menu(){
         do{
+            System.out.println("Que Figura quiere");
+            System.out.println("Que Figura quiere");
+            System.out.println("1- rectangulo");
+            System.out.println("2- cuadrado");
+            System.out.println("3- circulo");
+            System.out.println("4- cubo");
+            System.out.println("5- cilindro");
+            System.out.println("6- esfera");
             Scanner seleccione=new Scanner(System.in);
             int seleccion =seleccione.nextInt();
             switch(seleccion){
@@ -53,8 +54,9 @@ public class Logica {
             }
             System.out.println("Desea continuar 1=si 0=no");
             Scanner decision=new Scanner(System.in);
-            continuar =decision.nextInt();
+             continuar=Integer.parseInt(decision.nextLine());
         }while(continuar==1);
+       
         Imprimir();
     }
     public void Rectangulo(){
@@ -104,7 +106,11 @@ public class Logica {
         contador++; 
     }
     private void Imprimir() {
-        for(Figura figura: figurasGeometricas ){
+        for(int i=0;i<contador;i++){
+            Figura figura = figurasGeometricas[i];
+            System.out.println(figura.hallarArea());
+        }    
+        /*for(contador figura: figurasGeometricas ){
             if(figura instanceof Rectangulo){
                 ((Rectangulo) figura).hallarArea();
                 ((Rectangulo) figura).hallarPerimetro();
@@ -124,9 +130,6 @@ public class Logica {
                 ((Esfera) figura).hallarArea();
                 ((Esfera) figura).hallarVolumen();
             }
-            System.out.println("");
-                    
-            //System.out.println(figura.hallarArea());
-        }
+           */
     }
 }

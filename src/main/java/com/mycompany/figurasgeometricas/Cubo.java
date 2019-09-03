@@ -27,7 +27,7 @@ public class Cubo extends Figura3d{
     
     @Override
     public String hallarArea() {
-        return "El area del Cubo es "+6*(lado*lado);
+        return "El area del Cubo es "+6*(lado*lado)+" --- "+"El Volumen del Cubo es "+lado*lado*lado;
     }
 
     

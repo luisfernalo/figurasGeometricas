@@ -27,7 +27,7 @@ public class Circulo extends Figura2d{
     
     @Override
     public String hallarArea() {
-        return "El area del Circulo es "+Math.PI*(radio*radio);
+        return "El area del Circulo es "+Math.PI*(radio*radio)+" --- "+"el Perimetro del circulo es "+2*Math.PI*radio;
     }
 
     @Override

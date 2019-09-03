@@ -41,7 +41,7 @@ public class Cilindro extends Figura3d {
     }
         @Override
     public String hallarArea(){
-        return "El Area del Cilindro es "+2*Math.PI*radio*(altura+radio);
+        return "El Area del Cilindro es "+2*Math.PI*radio*(altura+radio)+" --- "+"El Volumen del Cilindro es "+ (Math.PI*(radio*radio))*altura;
     }
         
 }

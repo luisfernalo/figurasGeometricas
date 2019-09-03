@@ -9,7 +9,7 @@ package com.mycompany.figurasgeometricas;
  *
  * @author luis fernando
  */
-public class Figura implements Operaciones{
+public abstract class Figura implements Operaciones{
     private int x;
     private int y;
 
@@ -33,11 +33,6 @@ public class Figura implements Operaciones{
     public void setY(int y) {
         this.y = y;
     }
-    
-    @Override
-    public String hallarArea() {
-        return "";
-   
-    }
+  
     
 }

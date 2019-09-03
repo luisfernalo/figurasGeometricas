@@ -27,7 +27,7 @@ public class Cuadrado extends Figura2d{
         
     @Override
     public String hallarArea() {
-        return "El area del Cuadrado es "+lado*lado;
+        return "El area del Cuadrado es "+lado*lado+" --- "+"El perimetro del Cuadrado es "+lado*4;
     }
     @Override
     public String hallarPerimetro(){

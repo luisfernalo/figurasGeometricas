@@ -27,11 +27,11 @@ public class Esfera extends Figura3d {
 
     @Override
     public String hallarVolumen() {
-        return "El Area de la Esfera es "+4*Math.PI*radio*radio;
+        return "El Volumen de la Esfera es "+4*Math.PI*radio*radio;
     }
     @Override
     public String hallarArea(){
-        return "El Area de la Esfera es "+(4/3)*Math.PI*(radio*radio*radio);
+        return "El Area de la Esfera es "+4*Math.PI*radio*radio+" --- "+"El Volumen de la Esfera es "+(4/3)*Math.PI*(radio*radio*radio);
     }
     
 }

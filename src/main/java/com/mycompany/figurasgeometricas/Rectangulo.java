@@ -39,7 +39,7 @@ public class Rectangulo extends Figura2d{
     
     @Override
     public String hallarArea() {
-        return "El area del Rectangulo es "+base*altura;    
+        return "El area del Rectangulo es "+base*altura+" --- "+"El perimetro del Rectagulo es "+(base*2)+(altura*2);    
     }
     @Override
     public String hallarPerimetro(){
