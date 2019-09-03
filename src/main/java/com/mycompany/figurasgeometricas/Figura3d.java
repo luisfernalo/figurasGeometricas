@@ -10,7 +10,7 @@ package com.mycompany.figurasgeometricas;
  *
  * @author luis fernando, Angie Manrique
  */
-public abstract class Figura3d implements Operaciones {
+public abstract class Figura3d implements Operacion {
 
     /**
      * Constructor de la clase

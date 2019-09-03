@@ -15,7 +15,7 @@ import java.util.Scanner;
  */
 public class Logica {
 
-    ArrayList<Operaciones> figurasGeometricas = new ArrayList<Operaciones>();
+    ArrayList<Operacion> figurasGeometricas = new ArrayList<Operacion>();
 
     public void Principal() {
         Menu();
@@ -124,7 +124,7 @@ public class Logica {
 
     private void Imprimir() {
 
-        for (Operaciones figura : figurasGeometricas) {
+        for (Operacion figura : figurasGeometricas) {
             if (figura instanceof Triangulo) {
                 ((Triangulo) figura).imprimir();
             } else if (figura instanceof Cuadrado) {

@@ -11,7 +11,7 @@ package com.mycompany.figurasgeometricas;
  *
  * @author luis fernando, Angie Manrique
  */
-public abstract class Figura2d implements Operaciones {
+public abstract class Figura2d implements Operacion {
 
     /**
      * Constructor de la clase
